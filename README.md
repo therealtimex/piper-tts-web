@@ -25,7 +25,7 @@ This is a frontend library and will not work with NodeJS.
 ## Usage
 First of all, you need to install the library:
 ```bash
-yarn add @therealtimex/piper-tts-web
+yarn add @realtimex/piper-tts-web
 ```
 
 Then you're able to import the library like this (ES only)
