@@ -1,7 +1,7 @@
 {
   "name": "@realtimex/piper-tts-web",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Fork of @diffusion-studio/vits-web for easier built-in PiperTTS use.",
   "type": "module",
   "files": [

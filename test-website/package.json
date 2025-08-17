@@ -1,0 +1,27 @@
+{
+  "name": "piper-tts-test-website",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "python3 -m http.server 3000"
+  },
+  "keywords": [
+    "piper-tts",
+    "onnx-runtime",
+    "text-to-speech",
+    "test"
+  ],
+  "author": "RealTimeX",
+  "license": "MIT",
+  "description": "Test website for @realtimex/piper-tts-web library",
+  "dependencies": {
+    "@realtimex/piper-tts-web": "^1.1.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.2"
+  }
+}

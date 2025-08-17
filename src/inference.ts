@@ -100,7 +100,8 @@ export class TtsSession {
     try {
       const { createPiperPhonemize } = await import("./piper.js");
       this.#createPiperPhonemize = createPiperPhonemize;
-      this.#ort = await import("onnxruntime-web");
+      const ortModule = await import("onnxruntime-web");
+      this.#ort = ortModule.default || ortModule;
 
       this.#ort.env.allowLocalModels = allowLocalModels ?? true;
       this.#ort.env.wasm.numThreads = navigator.hardwareConcurrency;

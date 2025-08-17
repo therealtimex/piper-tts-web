@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@realtimex/piper-tts-web Test Suite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 @realtimex/piper-tts-web Test Suite</h1>
+            <p>Testing ONNX Runtime 1.22.0 with enhanced offline support</p>
+        </header>
+
+        <div class="test-section">
+            <h2>📝 Text Input</h2>
+            <textarea id="textInput" placeholder="Enter text to convert to speech...">Hello world! This is a test of the upgraded Piper TTS library with ONNX Runtime 1.22.0.</textarea>
+        </div>
+
+        <div class="test-section">
+            <h2>🎛️ Configuration Options</h2>
+            <div class="config-grid">
+                <div class="config-item">
+                    <label for="voiceSelect">Voice Model:</label>
+                    <select id="voiceSelect">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="config-item">
+                    <label for="allowLocalModels">Allow Local Models:</label>
+                    <select id="allowLocalModels">
+                        <option value="true">True (Default)</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+
+                <div class="config-item">
+                    <label for="fallbackStrategy">Fallback Strategy:</label>
+                    <select id="fallbackStrategy">
+                        <option value="cdn">CDN Only</option>
+                        <option value="local">Local Only</option>
+                        <option value="auto">Auto (CDN → Local)</option>
+                    </select>
+                </div>
+
+                <div class="config-item">
+                    <label for="enableLogging">Enable Logging:</label>
+                    <select id="enableLogging">
+                        <option value="true">Enabled</option>
+                        <option value="false">Disabled</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🎮 Controls</h2>
+            <div class="controls">
+                <button id="testBasicTTS" class="btn btn-primary">🎵 Test Basic TTS</button>
+                <button id="testSessionTTS" class="btn btn-secondary">⚙️ Test Session TTS</button>
+                <button id="downloadModel" class="btn btn-info">📥 Download Model</button>
+                <button id="clearCache" class="btn btn-warning">🗑️ Clear Cache</button>
+                <button id="testOffline" class="btn btn-danger">📡 Test Offline Mode</button>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📊 Status & Results</h2>
+            <div class="status-grid">
+                <div class="status-item">
+                    <h3>Library Status</h3>
+                    <div id="libraryStatus" class="status-indicator">Not loaded</div>
+                </div>
+                <div class="status-item">
+                    <h3>Session Status</h3>
+                    <div id="sessionStatus" class="status-indicator">No session</div>
+                </div>
+                <div class="status-item">
+                    <h3>Model Status</h3>
+                    <div id="modelStatus" class="status-indicator">Not loaded</div>
+                </div>
+                <div class="status-item">
+                    <h3>Audio Status</h3>
+                    <div id="audioStatus" class="status-indicator">Ready</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🎧 Audio Player</h2>
+            <audio id="audioPlayer" controls style="width: 100%; margin: 10px 0;"></audio>
+            <div class="audio-info">
+                <span id="audioInfo">No audio generated yet</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📋 Logs</h2>
+            <div class="log-container">
+                <div class="log-header">
+                    <span>Debug Logs</span>
+                    <button id="clearLogs" class="btn-small">Clear</button>
+                </div>
+                <div id="logsContainer" class="log-output"></div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📈 Performance Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-label">Model Load Time:</span>
+                    <span id="modelLoadTime" class="metric-value">-</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Synthesis Time:</span>
+                    <span id="synthesisTime" class="metric-value">-</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Audio Duration:</span>
+                    <span id="audioDuration" class="metric-value">-</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Total Time:</span>
+                    <span id="totalTime" class="metric-value">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>ℹ️ Library Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Package:</strong> @realtimex/piper-tts-web@1.1.0
+                </div>
+                <div class="info-item">
+                    <strong>ONNX Runtime:</strong> 1.22.0
+                </div>
+                <div class="info-item">
+                    <strong>Features:</strong> Configurable allowLocalModels, Fallback strategies, Enhanced error handling
+                </div>
+                <div class="info-item">
+                    <strong>CDN:</strong> https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
