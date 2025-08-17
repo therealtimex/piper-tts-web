@@ -27,3 +27,5 @@ playwright-report
 
 assets/*.wasm
 assets/*.data
+
+tasks
